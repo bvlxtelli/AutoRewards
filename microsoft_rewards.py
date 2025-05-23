@@ -147,7 +147,8 @@ if primeiro_acesso != 'n':
 contador = 0
 
 # Lista de palavras para pesquisa
-termo = 'abc'
+letras = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','ç', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 1, 2, 3]
+termo = ''
 
 # Realizar 30 pesquisas
 while contador < 30:
@@ -155,7 +156,7 @@ while contador < 30:
     dia = datetime.now().strftime("%d/%m/%Y")
     hora = datetime.now().strftime("%H:%M:%S")
 
-    termo += str(contador)
+    termo += str(letras[contador])
     search_box = driver.find_element(By.NAME, "q")
     search_box.clear()
     search_box.send_keys(termo)
@@ -165,7 +166,7 @@ while contador < 30:
 
     print(f'[ {dia} - {hora} ] Pesquisa número {contador} realizada.')
 
-    time.sleep(random.uniform(20, 35))  # Espera aleatória para evitar bloqueios
+    time.sleep(random.uniform(15, 20))  # Espera aleatória para evitar bloqueios
 
 print(f'\n ------------------------------------------------------------ \n')
 print(f'\n {contador} Pesquisas foram realizadas... Provavelmente... \n')
