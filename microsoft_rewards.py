@@ -38,7 +38,7 @@ primeiro_acesso = config.get("primeiro_acesso","")
 
 TEMP_DIR = r"C:\\%appdata%\\.msrwd\\temp"
 
-caminho_do_chromedriver = os.path.join(os.path.dirname(__file__), "chromedriver.exe")
+caminho_do_chromedriver = os.path.join(os.path.dirname(__file__), "dependencies/chromedriver.exe")
 
 # Executa esse processo em segundo plano
 
@@ -153,9 +153,6 @@ termo = ''
 # Realizar 30 pesquisas
 while contador < 30:
 
-    dia = datetime.now().strftime("%d/%m/%Y")
-    hora = datetime.now().strftime("%H:%M:%S")
-
     termo += str(letras[contador])
     search_box = driver.find_element(By.NAME, "q")
     search_box.clear()
@@ -164,7 +161,7 @@ while contador < 30:
     
     contador += 1
 
-    print(f'[ {dia} - {hora} ] Pesquisa número {contador} realizada.')
+    print(f'[ {datetime.now().strftime("%d/%m/%Y %H:%M:%S")} ] Pesquisa número {contador} realizada.')
 
     time.sleep(random.uniform(15, 20))  # Espera aleatória para evitar bloqueios
 
