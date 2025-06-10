@@ -1,1 +1,0 @@
-Vá até a pasta "dist\microsoft_rewards" e execute o programa.
