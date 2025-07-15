@@ -5,3 +5,5 @@ a.py
 b.py
 microsoft_rewards.spec
 .venv/
+THIRD_PARTY_NOTICES.chromedriver
+LICENSE.chromedriver
